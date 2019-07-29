@@ -1,0 +1,14 @@
+@import "reset.scss";
+@import "tema1.scss";
+
+body {
+    font-family: $pri-font, $sec-font;
+    margin: 15px;
+    font-size: 18px;
+}
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}

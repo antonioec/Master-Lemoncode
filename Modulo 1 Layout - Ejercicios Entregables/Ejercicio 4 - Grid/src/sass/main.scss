@@ -1,0 +1,101 @@
+@import "reset.scss";
+@import "layout.scss";
+
+
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.links {
+    grid-area: links;
+    background-color: pink;
+}
+
+.item-css {
+    grid-area: css;
+}
+
+.item-w3c {
+    grid-area: w3c;
+}
+
+.item-jss {
+    grid-area: jss;
+}
+
+.item-a {
+    grid-area: a;
+    background-color: yellow;
+}
+
+.item-b {
+    grid-area: b;
+    background-color: blue;
+}
+
+// XLarge
+@media (min-width: 1281px) {
+    .container {
+        @include xlarge-resolution;
+    }
+
+    .links {
+        @include links-grid;
+    }
+
+    .item-css, .item-jss, .item-w3c {
+        padding-top: 10vh;
+    }
+}
+
+// Large
+@media (max-width: 1280px) {
+    .container {
+        @include xlarge-resolution;
+        margin: 0;
+    }
+
+    .links {
+        @include links-grid;
+    }
+
+    .item-css, .item-jss, .item-w3c {
+        padding-top: 10vh;
+    }
+}
+
+// Medium
+@media (max-width: 860px) {
+    .container {
+        @include medium-resolution;
+        margin: 0;
+    }
+
+    .links {
+        @include links-flex;
+    }
+
+    .item-css, .item-jss, .item-w3c {
+        padding: 6vh 9vh;
+    }
+
+}
+
+// Small
+@media (max-width: 520px) {
+    .container {
+        @include small-resolution;
+        grid-template-rows: 5% auto;
+    }
+
+    .links {
+        @include links-flex;
+        justify-content: unset;
+    }
+
+    .item-css, .item-jss, .item-w3c {
+        padding: 0;
+    }
+
+}

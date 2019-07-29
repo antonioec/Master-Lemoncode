@@ -1,0 +1,31 @@
+$color-base: red;
+$pri-font: "Calibri";
+$sec-font: "Comic Sans MS";
+$perc: 30%;
+
+.base,
+.important,
+.warning {
+    margin: 5px;
+    font-weight: bold;
+    width: 140px;
+    height: 120px;
+    box-shadow: -10px 10px 15px black;
+    border-radius: 5px;
+    p {
+        padding-left: 15%;
+        padding-top: 20%;
+    }
+}
+
+.base {
+    background-color: $color-base;
+}
+
+.important {
+    background-color: darken($color-base, $perc);
+}
+
+.warning {
+    background-color: lighten($color-base, $perc);
+}

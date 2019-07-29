@@ -1,0 +1,54 @@
+@import "reset.scss";
+$color-base: blue;
+$pri-font: "Arial";
+$sec-font: "Times New Roman";
+$perc: 30%;
+body {
+    font-family: $pri-font, $sec-font;
+    font-size: 18px;
+}
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: pink;
+    p {
+        align-self: center;
+        margin: 0 10px;
+    }
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: lightgray;
+    .items {
+        font-family: 'Times New Roman, Times, serif';
+        background-color: white;
+        border: black 1px solid;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        margin: 2px;
+        padding: 1px;
+    }
+}
+
+@media (max-width: 600px) {
+    #lemoncode {
+        display: none;
+    }
+    .main {
+        justify-content: space-between;
+    }
+    .navbar .items {
+        font-size: 10px;
+    }
+}

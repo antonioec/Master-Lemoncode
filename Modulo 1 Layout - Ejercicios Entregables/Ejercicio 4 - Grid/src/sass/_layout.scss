@@ -1,0 +1,52 @@
+@mixin base-grid-definition {
+    display: grid;
+    margin: 2em;
+    min-height: 100vh;
+}
+
+@mixin links-grid {
+    display: grid;
+    grid-template-areas:
+        "css"
+        "w3c"
+        "jss";
+    grid-template-rows: repeat(2, 25%) 50%;
+}
+
+@mixin links-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin xlarge-resolution {
+    @include base-grid-definition;
+
+    grid-template-areas:
+        "links a a"
+        "links a a"
+        "links b b";
+    grid-template-columns: 25% auto;
+    grid-template-rows: repeat(2, 25%) 50%;
+}
+
+@mixin medium-resolution {
+    @include base-grid-definition;
+    grid-template-areas:
+        "links links links"
+        "a a a"
+        "b b b";
+    grid-template-columns: 33.33%;
+    grid-template-rows: 15% auto;
+}
+
+@mixin small-resolution {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .item-a, .item-b {
+        flex-grow: 1;
+    }
+}
+

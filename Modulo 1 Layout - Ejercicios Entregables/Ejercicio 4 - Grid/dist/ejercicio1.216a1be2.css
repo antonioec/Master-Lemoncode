@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: sans-serif; }
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row; }
+
+[class^="dark"],
+[class^="light"],
+.base {
+  flex-grow: 1;
+  height: 20vh;
+  text-align: center;
+  max-width: 130px;
+  margin: 3px; }
+  [class^="dark"] p,
+  [class^="light"] p,
+  .base p {
+    padding-top: 50%; }
+
+.base {
+  background-color: red; }
+
+.dark-1 {
+  background-color: #700000; }
+
+.light-1 {
+  background-color: #ff8f8f; }
+
+.dark-2 {
+  background-color: #940000; }
+
+.light-2 {
+  background-color: #ff6b6b; }
+
+.dark-3 {
+  background-color: #b80000; }
+
+.light-3 {
+  background-color: #ff4747; }
+
+.dark-4 {
+  background-color: #db0000; }
+
+.light-4 {
+  background-color: #ff2424; }
+
+
+/*# sourceMappingURL=/ejercicio1.216a1be2.css.map */

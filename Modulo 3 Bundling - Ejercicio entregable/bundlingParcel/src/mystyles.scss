@@ -1,0 +1,17 @@
+$color: #4286f4;
+body {
+    background-color: $color;
+    padding: 10px;
+}
+
+.world {
+    text-decoration: underline;
+}
+
+#imgContainer {
+    display: block;
+    img {
+        width: 350px;
+        height: 300px;
+    }
+}
