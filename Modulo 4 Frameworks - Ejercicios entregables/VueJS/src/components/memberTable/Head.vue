@@ -1,9 +1,9 @@
 <template>
-  <tr>
+  <thead>
     <th :class="$style.column">Avatar</th>
     <th :class="$style.column">Id</th>
     <th :class="$style.column">Name</th>
-  </tr>
+  </thead>
 </template>
 
 <script lang="ts">

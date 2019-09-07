@@ -18,7 +18,8 @@ module.exports = {
   mode: "development",
   entry: {
     app: "./main.ts",
-    vendor: ["vue"]
+    vendor: ["vue", "vuetify"],
+    vendorStyles: ['../node_modules/vuetify/dist/vuetify.min.css'],
   },
   output: {
     path: path.join(basePath, "dist"),
@@ -64,10 +65,12 @@ module.exports = {
               {
                 loader: "css-loader",
                 options: {
-                  modules: true,
-                  camelCase: true,
-                  localIdentName: "[name]__[local]__[hash:base64:5]"
-                }
+                  localsConvention: "camelCase",
+                  modules: {
+                    mode: "local",
+                    localIdentName: '[name]__[local]__[hash:base64:5]',
+                  },
+                },
               }
             ]
           },

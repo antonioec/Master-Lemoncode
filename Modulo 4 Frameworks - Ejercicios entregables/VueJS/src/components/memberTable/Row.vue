@@ -23,7 +23,7 @@ interface Props {
 export default Vue.extend({
   name: "MemberRow",
   props: {
-    member: {}
+    member: {},
   } as Props
 });
 </script>

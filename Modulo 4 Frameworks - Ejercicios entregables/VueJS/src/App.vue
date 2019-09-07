@@ -1,5 +1,9 @@
 <template>
-  <member-table/>
+  <v-content>
+    <v-container>
+      <member-table :search-text="searchText" :on-search="onSearch"/>
+    </v-container>
+  </v-content>
 </template>
 
 <script lang="ts">
@@ -8,6 +12,10 @@ import { MemberTable } from "./components";
 
 export default Vue.extend({
   name: "App",
-  components: { MemberTable }
+  components: { MemberTable },
+  props: {
+    searchText: String,
+    onSearch: Function
+  }
 });
 </script>

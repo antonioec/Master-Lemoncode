@@ -1,11 +1,10 @@
 <template>
   <div>
     <h2>Member Page</h2>
-    <button @click="loadMembers">Load</button>
+    <search-bar-component :search-text="searchText" :on-search="onSearch"/>
+    <v-btn type="submit" color="blue" @click="loadMembers">Load</v-btn>
     <table :class="$style.table">
-      <thead>
-        <member-head/>
-      </thead>
+      <member-head/>
       <tbody>
         <template v-for="member in members">
           <member-row :key="member.id" :member="member"/>
@@ -19,26 +18,34 @@
 import Vue from "vue";
 import MemberHead from "./Head.vue";
 import MemberRow from "./Row.vue";
+import SearchBarComponent from './SearchBar.vue'
 import { Member } from "../../model/member";
 import { getAllMembers } from "../../api/memberAPI";
 
 export default Vue.extend({
   name: "MemberTable",
-  components: { MemberHead, MemberRow },
+  components: { MemberHead, MemberRow, SearchBarComponent },
   data: () => ({
-    members: [] as Member[]
+    members: [] as Member[],
+    organization: "lemoncode",
   }),
   methods: {
     loadMembers: function() {
-      getAllMembers("lemoncode").then(members => {
+      getAllMembers(this.organization).then(members => {
         this.members = members;
       });
+    },
+    onSearch: function(searchText) {
+      this.organization = searchText;
     }
+  },
+  props: {
+    searchText: String,
   }
 });
 </script>
 
-+ <style module>
+<style module>
 .table {
   border-collapse: collapse;
   width: 100%;
