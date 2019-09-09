@@ -1,9 +1,16 @@
-<h2>Members Page</h2>
-<button (click)="loadMembers()">Load</button>
-<table>
-  <thead app-member-head></thead>
-  <tbody>
-    <tr app-member-row [member]="member" *ngFor="let member of members">
-    </tr>
-  </tbody>
-</table>
+<div class="content">
+  <div class="col">
+    <h2>Members Page: {{organization}}</h2>
+  </div>
+  <div class="col p-xl-3">
+    <input class="input px-md-3" placeholder="Search for organization ..." type="text" (input)="onSearch($event.target.value)" />
+    <button class="btn btn-primary btn-sm"(click)="loadMembers()">Load</button>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark" app-member-head></thead>
+    <tbody>
+      <tr app-member-row [member]="member" *ngFor="let member of members">
+      </tr>
+    </tbody>
+  </table>
+</div>
